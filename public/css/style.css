@@ -1,0 +1,813 @@
+@charset 'UTF-8';
+
+/*
+VARIABLES
+================================================ */
+:root {
+    --light-green: #d5edeb;
+    --green: #63dbd0;
+    --brown: #403632;
+    /* --light-grey: #eee; */
+    --white: #fff;
+    --oswald-font: 'Oswald', sans-serif;
+}
+
+/*
+GENERAL STYLING
+================================================ */
+body {
+    color: var(--brown);
+    background: url('../images/track3.jpg') no-repeat right bottom / cover fixed;
+    text-align: center;
+}
+
+/*
+COMMON
+================================================ */
+p {
+    line-height: 1.7;
+}
+img {
+    max-width: 100%;
+}
+.title {
+    font-family: var(--oswald-font);
+    font-size: min(10vw, 4rem);
+    margin-bottom: 2rem;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+.btn {
+    color: var(--white);
+    background: var(--brown);
+    border: 1px solid var(--brown);
+    text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+    margin: 2rem 0;
+    transition: .4s;
+}
+
+.fadein {
+    opacity: 0;
+}
+
+/*
+LAYOUT
+================================================ */
+.wrapper {
+    max-width: 38rem;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+/*
+LOADING
+================================================ */
+#loading {
+    background-color: var(--white);
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+}
+#loading-screen {
+    background-color: var(--light-green);
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    translate: 0 100vh;
+}
+#loading p {
+    font-size: 2rem;
+    font-family: var(--oswald-font);
+}
+
+/*
+SLIDE MENU
+================================================ */
+/* ----- ↓↓ 追加 ↓↓ ----- */
+/* 開閉ボタン */
+
+.btn-menu {
+    margin-right: 25px;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 4;
+    padding: .5rem 1rem;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    transition: .4s;
+}
+.btn-menu svg {
+    fill: var(--white);
+    margin-top: .25rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+/* 閉じるボタン */
+#menu-close {
+    border: 1px solid var(--light-green);
+}
+#menu-close svg {
+    fill: var(--light-green);
+}
+
+/* スライドメニューパネル */
+#menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    padding: 8rem 2rem 2rem;
+    width: max(32vw, 20rem);
+    height: 100vh;
+    background-color: var(--brown);
+    box-shadow: 0 0 2rem var(--brown);
+    font-family: var(--oswald-font);
+    translate: 100vw;
+}
+.menu-list {
+    list-style: none;
+}
+.menu-list li {
+    margin: 1.5rem 0;
+    opacity: 0;
+}
+.menu-list a {
+    color: var(--light-green);
+    text-decoration: none;
+    font-size: 2rem;
+}
+/* ----- ↑↑ 追加 ↑↑ ----- */
+
+/*
+HERO
+================================================ */
+.hero {
+    height: 100vh;
+    position: relative;
+}
+.hero::after {
+    content: '';
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+}
+.hero .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 2;
+    width: 100%;
+    font-size: max(12vw, 3rem);
+    line-height: 1.2;
+    color: #fff;
+}
+
+/*
+CONCEPT
+================================================ */
+.concept {
+    margin: 8rem 0;
+    /* background-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 20%,
+        var(--light-grey) 20%,
+        var(--light-grey) 100%
+    ); */
+    background-color: #fff;
+}
+.concept p {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+/*
+DESKTOP SIZE
+================================================ */
+@media(min-width: 800px){
+/* COMMON */
+    .title {
+        margin-bottom: 3rem;
+    }
+    .btn:hover {
+        color: var(--brown);
+        background: var(--light-green);
+    }
+
+/* SLIDE MENU */
+    .btn-menu:hover {
+        background-color: var(--light-green);
+    }
+    #menu-close:hover svg {
+        fill: var(--brown);
+    }
+    .menu-list a:hover {
+        transition: .4s;
+        color: var(--green);
+    }
+
+/* CONCEPT*/
+    .concept {
+        display: flex;
+        margin: 16rem 0;
+    }
+    .concept p {
+        text-align-last: left;
+    }
+    .concept img {
+        margin: -6rem 0;
+        max-width: 38rem;
+    }
+
+}
+
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo {
+    width: 150px;
+    margin: 14px;
+    margin-left: 80px;
+    border-radius: 10px;
+    width: 100px;
+    height: auto;
+}
+
+
+/* ログイン画面 */
+
+.login-bg {
+    background-image: url('../images/track5.jpg');
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* フォームのスタイル */
+.login-area {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-area .block {
+    margin-bottom: 20px;
+}
+
+.login-area label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-area input[type="email"],
+.login-area input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login-area input[type="email"]:focus,
+.login-area input[type="password"]:focus {
+    border-color: black;
+    outline: none;
+}
+
+.login-area .block.mt-4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-area .underline {
+    text-decoration: none;
+    color: black;
+}
+
+.login-area .underline:hover {
+    color: #333;
+}
+
+.login-area .flex.items-center.justify-end.mt-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-area button {
+    background: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-area button:hover {
+    background: #acb6e5;
+}
+
+/* スマートフォン用のスタイル */
+@media (max-width: 600px) {
+    body.login-bg {
+        padding: 20px;
+    }
+
+    .page-header .logo {
+        width: 120px;
+    }
+
+    .login-area {
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-area .block {
+        margin-bottom: 15px;
+    }
+
+    .login-area label {
+        font-size: 12px;
+    }
+
+    .login-area input[type="email"],
+    .login-area input[type="password"] {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .login-area button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* 登録画面 */
+
+
+body.register-bg {
+    background-image: url(../images/track7.jpg);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-area {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.register-area h2 {
+    text-align: center;
+    color: #333;
+}
+
+.register-area div {
+    margin-bottom: 1rem;
+}
+
+.register-area label {
+    font-weight: bold;
+    color: #333;
+}
+
+.register-area input[type="text"],
+.register-area input[type="email"],
+.register-area input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.register-area input[type="text"]:focus,
+.register-area input[type="email"]:focus,
+.register-area input[type="password"]:focus {
+    outline: none;
+    border-color: black;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+.register-area a {
+    color: black;
+    text-decoration: none;
+}
+
+.register-area a:hover {
+    text-decoration: underline;
+}
+
+.register-area button {
+    background: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.register-area button:hover {
+    background: #2575fc;
+}
+
+.x-input-error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+    body.register-bg {
+        padding: 1rem;
+    }
+
+    .register-area {
+        padding: 1.5rem;
+    }
+
+    .register-area input[type="text"],
+    .register-area input[type="email"],
+    .register-area input[type="password"] {
+        padding: 0.75rem;
+    }
+
+    .register-area button {
+        padding: 0.75rem 1.25rem;
+    }
+
+    .flex.items-center.justify-end.mt-4 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .flex.items-center.justify-end.mt-4 a {
+        margin-bottom: 1rem;
+    }
+
+    .flex.items-center.justify-end.mt-4 button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* コンサルティングページ */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo {
+    width: 150px;
+    margin: 14px;
+    margin-left: 80px;
+    border-radius: 10px;
+    width: 100px;
+    height: auto;
+}
+
+.consulting-bg {
+    background-image: url(../images/track4.jpg);
+}
+
+.consulting{
+    /* display: flex; */
+    margin-top: 0;
+    background-color:#fff;
+    border-radius: 10px;
+    justify-content: center;
+    margin: 0px 100px 100px 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+.consulting-text{
+    width: 1000px; 
+    height: 50px;
+}
+
+.result-text{
+    width: 1000px; 
+    height: 500px;
+}
+
+.result-h1 {
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* スマートフォン版のCSS */
+@media screen and (max-width: 768px) {
+    .page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        width: 100px;
+        margin: 10px;
+    }
+
+    .consulting {
+        margin: 0 20px 20px 20px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .consulting-text,
+    .result-text {
+        width: calc(100% - 40px);
+        margin: 0 10px;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: calc(100% - 20px);
+        margin: 0 10px;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .alert-success {
+        width: calc(100% - 20px);
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .result-h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+/* 結果画面 */
+
+.result-bg {
+    background-image: url(../images/track6.jpg);
+}
+
+.result-area {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.training-text{
+    width: 1000px; 
+    height: 500px;
+}
+
+.result-h1 {
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+    .page-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        width: 80px;
+        margin: 10px 0;
+    }
+
+    .result-bg {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .result-area {
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .training-text {
+        width: 300px;
+        height: 500px;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem;
+    }
+
+    .result-h1 {
+        font-size: 1.5rem;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* プロフィール画面 */
+.profile-bg {
+    background-image: url(../images/track7.jpg);
+}
+
+.profile {
+    background-color: #fff;
+    border-radius: 15px;
+    padding-top: 1px;
+    padding-bottom: 0.1%;
+    box-shadow:  10px 10px 12px;
+    margin: 0px 100px 0px 100px;
+
+}
+
+.profile-erea {
+    justify-content: center;
+}
+
+.profile-username {
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    margin-left: 110px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.app-bg {
+    background: url(../images/track2.jpg);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.profile-section, .events-section, .training-section {
+    margin-bottom: 2rem;
+}
+
+.profile-info, .event, .training-menu {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.profile-info p, .event p, .training-menu p {
+    margin-bottom: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.add-event, .add-menu {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: #007bff;
+}
+
+.add-event:hover, .add-menu:hover {
+    background-color: #0056b3;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* ナビゲーションバーが他の要素の上に表示されるようにする */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 任意で影を追加してナビゲーションバーを目立たせる */
+}
+
+.app-bg {
+    margin-top: 200px; /* ナビゲーションバーの高さ分の余白を追加して、内容が隠れないようにする */
+}
+
+
